@@ -104,7 +104,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:text="Bloquear GymGirl/GymBoy"
-            android:textOff="Desactivar"
+            android:textOff="No aplica"
             android:textOn="Activar" />
     </RadioGroup>
 
@@ -120,35 +120,40 @@
 
     <CheckBox
         android:id="@+id/ganarResistenciaCheckBox"
-        android:layout_width="wrap_content"
+        android:layout_width="157dp"
         android:layout_height="wrap_content"
         android:background="@drawable/background_white"
         android:text="Ganar resistencia"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
     <CheckBox
         android:id="@+id/ganarMusculoCheckBox"
-        android:layout_width="wrap_content"
+        android:layout_width="141dp"
         android:layout_height="wrap_content"
         android:background="@drawable/background_white"
         android:text="Ganar músculo"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <CheckBox
         android:id="@+id/perderPesoCheckBox"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:background="@drawable/background_white"
         android:text="Perder peso"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
     <Button
 
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#333233"
-        android:text="Continuar" />
+        android:backgroundTint="#33445C"
+        android:text="Continuar"
+        android:textSize="20sp" />
 
     <ProgressBar
         android:id="@+id/progressBar"

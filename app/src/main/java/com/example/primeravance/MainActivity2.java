@@ -46,7 +46,6 @@ public class MainActivity2 extends AppCompatActivity {
 
         button2.setOnClickListener(view -> {
             if (camposEstanCompletos() && objetivosSeleccionadosValidos()) {
-                // Todos los campos están completos y se han seleccionado de 1 a 2 objetivos
                 mostrarToast("Sus datos han sido registrados exitosamente");
 
                 progressBar.setVisibility(View.VISIBLE);

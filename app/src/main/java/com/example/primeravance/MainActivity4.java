@@ -1,60 +1,73 @@
 package com.example.primeravance;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity4 extends AppCompatActivity {
 
+    private RecyclerView recyclerView;
+    private ItemAdapter itemAdapter;
     private RatingBar ratingBar;
     private ProgressBar progressBar;
     private ImageButton imageButton;
+    private Button regresarButton;
 
-    private boolean calificacionRealizada = false; // Variable para verificar si se ha realizado la calificación
+    private boolean calificacionRealizada = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
 
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+
+        itemAdapter = new ItemAdapter(this);
+        itemAdapter.setDate(getData());
+        recyclerView.setAdapter(itemAdapter);
+        recyclerView.setLayoutManager(linearLayoutManager);
         ratingBar = findViewById(R.id.ratingBar2);
         progressBar = findViewById(R.id.progressBar);
         imageButton = findViewById(R.id.imageButton);
+        regresarButton = findViewById(R.id.button5);
 
-        // Inicialmente, configura el color de las estrellas como transparentes
         ratingBar.setRating(0);
 
-        // Configurar un OnClickListener para el botón de imagen
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (calificacionRealizada) {
-                    // Mostrar un Toast con el mensaje
+
                     String mensaje = "Gracias por tu calificación, tu nota es : " + ratingBar.getRating();
                     mostrarToast(mensaje);
                 } else {
-                    // Mostrar el ProgressBar
+
                     progressBar.setVisibility(View.VISIBLE);
 
-                    // Simular una operación de calificación (aquí se usa un temporizador de 2 segundos)
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            // Cambiar el color de las estrellas a amarillo
-                            ratingBar.setRating(5); // Establece una calificación de ejemplo (ajusta según tus necesidades)
 
-                            // Marcar la calificación como realizada
+                            ratingBar.setRating(5);
+
                             calificacionRealizada = true;
 
-                            // Ocultar el ProgressBar después de la simulación
                             progressBar.setVisibility(View.INVISIBLE);
 
-                            // Mostrar un Toast con la calificación
                             String mensaje = "Gracias por calificarnos, tu nota es: " + ratingBar.getRating();
                             mostrarToast(mensaje);
                         }
@@ -62,9 +75,29 @@ public class MainActivity4 extends AppCompatActivity {
                 }
             }
         });
+
+        regresarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                regresarAMainActivity3();
+            }
+        });
     }
 
     private void mostrarToast(String mensaje) {
         Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
+    }
+
+    private void regresarAMainActivity3() {
+        Intent intent = new Intent(this, MainActivity3.class);
+        startActivity(intent);
+    }
+
+    private List<Item> getData() {
+        List<Item> list = new ArrayList<>();
+        list.add(new Item(R.drawable.facebook,"Facebook"));
+        list.add(new Item(R.drawable.instagram,"Instagram"));
+
+        return list;
     }
 }

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity3">
 
-    <!-- ImageView para la imagen de fondo -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,7 +17,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Agregar aquí los elementos que deseas en la parte superior de la imagen de fondo, como tu Spinner -->
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
@@ -33,6 +31,7 @@
             android:layout_width="372dp"
             android:layout_height="64dp"
             android:layout_gravity="center"
+            android:background="#FAFAFA"
             android:entries="@array/spinnerSelect" />
 
         <TextView
@@ -49,24 +48,37 @@
             android:layout_width="372dp"
             android:layout_height="64dp"
             android:layout_gravity="center"
+            android:background="#FFFFFF"
             android:entries="@array/spinnerSelect2" />
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:insetTop="40dp"
-            android:text="Finalizar registro" />
+            android:backgroundTint="#33445C"
+            android:insetTop="8dp"
+            android:text="Finalizar registro"
+            android:textSize="20sp" />
 
-        <!-- Botón "Calificar" al final -->
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#33445C"
+            android:text="Regresar"
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:insetLeft="0dp"
-            android:insetTop="400dp"
+            android:layout_width="331dp"
+            android:layout_height="420dp"
+            android:backgroundTint="#33445C"
+            android:insetLeft="100dp"
+            android:insetTop="330dp"
+            android:insetBottom="20dp"
             android:onClick="calificarClick"
-            android:text="Calificar" />
+            android:text="Calificar"
+            android:textSize="34sp" />
 
     </LinearLayout>
 </FrameLayout>

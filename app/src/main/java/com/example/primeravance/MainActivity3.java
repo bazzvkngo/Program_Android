@@ -1,12 +1,13 @@
 package com.example.primeravance;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity3 extends AppCompatActivity {
 
@@ -22,8 +23,23 @@ public class MainActivity3 extends AppCompatActivity {
                 mostrarDialogoRegistroCompleto();
             }
         });
-    }
 
+        Button regresarButton = findViewById(R.id.button6);
+        regresarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                regresarAMainActivity2();
+            }
+        });
+
+        Button calificarButton = findViewById(R.id.button3);
+        calificarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                irAMainActivity4();
+            }
+        });
+    }
 
     private void mostrarDialogoRegistroCompleto() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -37,8 +53,12 @@ public class MainActivity3 extends AppCompatActivity {
                 .show();
     }
 
-    public void calificarClick(View view) {
+    private void regresarAMainActivity2() {
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
+    }
 
+    private void irAMainActivity4() {
         Intent intent = new Intent(this, MainActivity4.class);
         startActivity(intent);
     }
