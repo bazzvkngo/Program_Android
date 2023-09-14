@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PrimerAvance</string>
+    <string-array name="spinnerSelect">
+        <item>Bodybuilder</item>
+        <item>Calisthenic</item>
+        <item>CrossFit</item>
+    </string-array>
+
+    <string-array name="spinnerSelect2">
+        <item>Ectomorfo</item>
+        <item>Endomorfo</item>
+        <item>Mesomorfo</item>
+    </string-array>
+</resources>

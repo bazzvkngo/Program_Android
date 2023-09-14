@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity3">
+
+    <!-- ImageView para la imagen de fondo -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gym" />
+
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Agregar aquí los elementos que deseas en la parte superior de la imagen de fondo, como tu Spinner -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selecciona una disciplina."
+            android:textColor="#FBFAFA"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerSelect"
+            android:layout_width="372dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:entries="@array/spinnerSelect" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selecciona tu tipo de cuerpo"
+            android:textColor="#FDFDFD"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerSelect2"
+            android:layout_width="372dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:entries="@array/spinnerSelect2" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:insetTop="40dp"
+            android:text="Finalizar registro" />
+
+        <!-- Botón "Calificar" al final -->
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:insetLeft="0dp"
+            android:insetTop="400dp"
+            android:onClick="calificarClick"
+            android:text="Calificar" />
+
+    </LinearLayout>
+</FrameLayout>
